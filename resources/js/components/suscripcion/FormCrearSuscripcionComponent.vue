@@ -7,9 +7,9 @@
       </h1>
       <ol class="breadcrumb">
         <li>
-          <a href="#">
-            <i class="fa fa-dashboard"></i> Dashboard
-          </a>
+          <router-link to="/dashboard">
+            <i class="fa fa-dashboard" ></i>Dashboard
+          </router-link>
         </li>
         <li>
         <router-link to="/suscripcion/lista">
@@ -130,11 +130,11 @@
                 </div>
                 <div class="form-group col-md-6">
                   <label for="exampleInputEmail1">Puerta a la palabra</label>
-                  <input type="number" min="0" v-model="form.puerta"  class="form-control" value="0">
+                  <input type="number" min="0"  v-model="form.puerta"  class="form-control" value="0">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Fecha de pago</label>
-                  <input type="date" v-model="form.fecha_pago"class="form-control">
+                  <input type="date" required v-model="form.fecha_pago"class="form-control">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Enviar a partir de:</label>
@@ -224,7 +224,37 @@ toastr.options ={
           crearSuscripcion(){
             this.enviando='true';
             axios.post('/api/suscripcion',this.form).then(res =>{
-                toastr.success(res.data);
+              if (res.data=='Existe') {
+                toastr.warning('El titular existía, se le agregó una nueva suscripción');
+              }else {
+                toastr.success('Se creó titular y se le agregó una suscripción');
+              }
+              this.form = {
+                nombres:'',
+                apellidos:'',
+                cedula:'',
+                correo:'',
+                telefono:'',
+                passports:'',
+                fecha_nacimiento:'',
+                nombre_recibe:'',
+                pais:'',
+                estado:'',
+                zipcode:'',
+                ciudad:'',
+                direccion:'',
+                observacion:'',
+                jovenes:'0',
+                adultos:'0',
+                ninos:'0',
+                puerta:'0',
+                fecha_pago:'',
+                fecha_inicio:'',
+                tiempo:'',
+                numero_suscripcion:'',
+                numero_factura:''
+              }
+
                 this.enviando = false;
             })
             .catch(error =>{

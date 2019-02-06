@@ -1,7 +1,8 @@
 <ul class="sidebar-menu" data-widget="tree">
   <li class="header">NAVEGACIÓN</li>
   <!-- Optionally, you can add icons to the links -->
-<li><a href="{{url('ixtus')}}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+  <li ><router-link to="/dashboard" ><i class="fa fa-dashboard" ></i> Dashboard</a></router-link></li>
+
 
   <li class="treeview">
     <a href="#"><i class="fa fa-book"></i> <span>Suscripcion</span>

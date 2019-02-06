@@ -17,7 +17,7 @@ class CreateTitularsTable extends Migration
             $table->increments('id');
             $table->string('nombres')->nullable();
             $table->string('apellidos')->nullable();
-            $table->string('cedula')->nullable();
+            $table->string('cedula')->nullable()->unique();
             $table->string('correo')->nullable();
             $table->string('telefono')->nullable();
             $table->string('passports')->nullable();

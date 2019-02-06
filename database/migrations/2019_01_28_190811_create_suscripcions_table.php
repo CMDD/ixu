@@ -15,6 +15,7 @@ class CreateSuscripcionsTable extends Migration
     {
         Schema::create('suscripcions', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('estado_sus')->nullable();
             $table->string('nombre_recibe')->nullable();
             $table->string('pais')->nullable();
             $table->string('estado')->nullable();

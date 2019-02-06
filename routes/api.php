@@ -18,4 +18,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('suscripcion','SuscripcionesController@store');
+Route::post('actualizar-suscripcion','SuscripcionesController@update');
 Route::get('suscripciones','SuscripcionesController@index');
+Route::get('suscripcion/{id}','SuscripcionesController@show');

@@ -8,7 +8,7 @@
     </h1>
     <ol class="breadcrumb">
       <li>
-        <<router-link to="/ixtus">
+        <router-link to="/dashboard">
           <i class="fa fa-dashboard"></i> Dashboard
         </router-link>
       </li>
@@ -23,11 +23,17 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <table id="example1" class="table table-bordered table-striped">
+              <table id="datatable-suscripciones" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>Titulo</th>
-                  <th>Descripcion</th>
+                  <th>Estado</th>
+                  <th>T/Mes</th>
+                  <th>Fecha de pago</th>
+                  <th>Fecha de inicio</th>
+                  <th>Fecha de corte</th>
+                  <th>Titular</th>
+                  <th>Cedula</th>
+                  <th>Acción</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -49,13 +55,22 @@ export default {
   },
   created(){
     $(document).ready( function () {
-        $('#example1').DataTable({
+        $('#datatable-suscripciones').DataTable({
           "serverSide":true,
           "ajax":"api/suscripciones",
           "columns":[
-            {data:'nombre_recibe'},
-            {data:'pais'},
-          ]
+            {data:'estado_sus'},
+            {data:'tiempo'},
+            {data:'fecha_pago'},
+            {data:'fecha_inicio'},
+            {data:'fecha_corte'},
+            {data:'titular'},
+            {data:'cedula'},
+            {data:'btn'},
+          ],
+          "language":{
+            'url':'css/spanish.json'
+          }
         });
     } );
   },
@@ -65,12 +80,7 @@ export default {
     }
   },
   methods:{
-    getSuscripciones(){
-      axios.get('/suscripciones').then(res =>{
-          console.log(res.data);
-          this.sus = res.data;
-      });
-    }
+
   }
 
 }
