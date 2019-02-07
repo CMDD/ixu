@@ -104,8 +104,9 @@
                 </div>
                 <!-- /.box-body -->
                 <div class="box-footer">
-                  <button v-if="!editar" type="submit" class="btn btn-primary"  >
-                    <span >Actualizar</span>
+                  <button v-if="!editar" type="submit" :disabled="actualizando" class="btn btn-primary"  >
+                    <span v-if="actualizando" >Actualizando...</span>
+                    <span v-else>Actualizar</span>
                   </button>
                   <div v-if="editar" class="">
                     <span  class="btn btn-primary" v-on:click="activarEdicion">Editar</span>
@@ -194,7 +195,8 @@ toastr.options ={
     data(){
       return {
         form:{},
-        editar:'true'
+        editar:'true',
+        actualizando:''
       }
     },
       mounted(){
@@ -206,11 +208,14 @@ toastr.options ={
       methods:{
         activarEdicion(){
           this.editar = false;
+          this.actualizando = false;
         },
         actualizar(){
+          this.actualizando = true;
           axios.post('api/actualizar-suscripcion',this.form).then(res=>{
             this.editar = true;
             toastr.success('Se actualizó correctamente');
+            this.actualizando = true;
           });
         }
       }

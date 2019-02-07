@@ -2408,6 +2408,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 toastr__WEBPACK_IMPORTED_MODULE_0___default.a.options = {
   "closeButton": true,
@@ -2418,7 +2419,8 @@ toastr__WEBPACK_IMPORTED_MODULE_0___default.a.options = {
   data: function data() {
     return {
       form: {},
-      editar: 'true'
+      editar: 'true',
+      actualizando: ''
     };
   },
   mounted: function mounted() {
@@ -2431,13 +2433,16 @@ toastr__WEBPACK_IMPORTED_MODULE_0___default.a.options = {
   methods: {
     activarEdicion: function activarEdicion() {
       this.editar = false;
+      this.actualizando = false;
     },
     actualizar: function actualizar() {
       var _this2 = this;
 
+      this.actualizando = true;
       axios.post('api/actualizar-suscripcion', this.form).then(function (res) {
         _this2.editar = true;
         toastr__WEBPACK_IMPORTED_MODULE_0___default.a.success('Se actualizó correctamente');
+        _this2.actualizando = true;
       });
     }
   }
@@ -50329,9 +50334,16 @@ var render = function() {
                           "button",
                           {
                             staticClass: "btn btn-primary",
-                            attrs: { type: "submit" }
+                            attrs: {
+                              type: "submit",
+                              disabled: _vm.actualizando
+                            }
                           },
-                          [_c("span", [_vm._v("Actualizar")])]
+                          [
+                            _vm.actualizando
+                              ? _c("span", [_vm._v("Actualizando...")])
+                              : _c("span", [_vm._v("Actualizar")])
+                          ]
                         )
                       : _vm._e(),
                     _vm._v(" "),
@@ -65096,14 +65108,15 @@ __webpack_require__.r(__webpack_exports__);
 /*!***************************************************************!*\
   !*** ./resources/js/components/suscripcion/ShowComponent.vue ***!
   \***************************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ShowComponent_vue_vue_type_template_id_3a90377c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ShowComponent.vue?vue&type=template&id=3a90377c& */ "./resources/js/components/suscripcion/ShowComponent.vue?vue&type=template&id=3a90377c&");
 /* harmony import */ var _ShowComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ShowComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/suscripcion/ShowComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _ShowComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _ShowComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -65133,7 +65146,7 @@ component.options.__file = "resources/js/components/suscripcion/ShowComponent.vu
 /*!****************************************************************************************!*\
   !*** ./resources/js/components/suscripcion/ShowComponent.vue?vue&type=script&lang=js& ***!
   \****************************************************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
