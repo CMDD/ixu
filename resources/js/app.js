@@ -13,6 +13,7 @@ Vue.component('form-crear-suscripcion', require('./components/suscripcion/FormCr
 Vue.component('lista-suscripciones', require('./components/suscripcion/ListaSuscripcionComponent.vue').default);
 Vue.component('show-component',require('./components/suscripcion/ShowComponent.vue').default);
 Vue.component('dashboard-component',require('./components/DashboardComponent.vue').default);
+Vue.component('index-component',require('./components/titular/IndexComponent.vue').default);
 
 
 
@@ -34,6 +35,10 @@ let router = new Router({
     {
       path:'/dashboard',
       component: require('./components/DashboardComponent').default
+    },
+    {
+      path:'/titulares',
+      component: require('./components/titular/IndexComponent').default
     }
   ],
   linkExactActiveClass:'active'

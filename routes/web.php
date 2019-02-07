@@ -9,6 +9,9 @@ Route::get('ixtus', function () {return view('admin.index');});
 Route::get('suscripcion/crear','SuscripcionesController@crear')->name('suscripcion.crear');
 Route::get('suscripcion/index','SuscripcionesController@index')->name('suscripcion.index');
 
+//Reportes
+Route::get('reporte/suscripciones','ReporteController@exportSuscripciones');
+
 
 
 

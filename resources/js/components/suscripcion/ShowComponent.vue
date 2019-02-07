@@ -28,12 +28,11 @@
           <!-- left column -->
           <div class="col-md-7">
             <!-- general form elements -->
-            <div class="box box-primary">
+            <!-- <div class="box box-primary">
               <div class="box-header with-border">
                 <h3 class="box-title">Datos de quien compra la suscripcion</h3>
               </div>
-              <!-- /.box-header -->
-              <!-- form start -->
+
                 <div class="box-body">
                   <div class="form-group col-md-6">
                     <label for="exampleInputEmail1">Nombres</label>
@@ -64,8 +63,8 @@
                     <input type="text" disabled class="form-control" v-model="form.fecha_nacimiento">
                   </div>
                 </div>
-                <!-- /.box-body -->
-            </div>
+
+            </div> -->
             <!-- /.box -->
             <div class="box box-primary">
               <div class="box-header with-border">
@@ -104,6 +103,15 @@
                   </div>
                 </div>
                 <!-- /.box-body -->
+                <div class="box-footer">
+                  <button v-if="!editar" type="submit" class="btn btn-primary"  >
+                    <span >Actualizar</span>
+                  </button>
+                  <div v-if="editar" class="">
+                    <span  class="btn btn-primary" v-on:click="activarEdicion">Editar</span>
+
+                  </div>
+                </div>
             </div>
           </div>
           <!--/.col (left) -->
@@ -163,16 +171,7 @@
                     <input type="text" id="exampleInputFile" :disabled="editar"  class="form-control" v-model="form.numero_factura">
                   </div>
                 </div>
-                <!-- /.box-body -->
-                <div class="box-footer">
-                  <button v-if="!editar" type="submit" class="btn btn-primary"  >
-                    <span >Actualizar</span>
-                  </button>
-                  <div v-if="editar" class="">
-                    <span  class="btn btn-primary" v-on:click="activarEdicion">Editar</span>
 
-                  </div>
-                </div>
             </div>
             <!-- /.box -->
           </div>

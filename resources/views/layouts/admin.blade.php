@@ -50,10 +50,10 @@
             <!-- Menu toggle button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-envelope-o"></i>
-              <span class="label label-success">4</span>
+              <span class="label label-success">0</span>
             </a>
             <ul class="dropdown-menu">
-              <li class="header">Tienes 4 mensajes</li>
+              <li class="header">Tienes 0 mensajes</li>
               <li>
                 <!-- inner menu: contains the messages -->
 
@@ -69,10 +69,10 @@
             <!-- Menu toggle button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-bell-o"></i>
-              <span class="label label-warning">10</span>
+              <span class="label label-warning">0</span>
             </a>
             <ul class="dropdown-menu">
-              <li class="header">Tienes 10 notificaciones</li>
+              <li class="header">Tienes 0 notificaciones</li>
               <li>
                 <!-- Inner Menu: contains the notifications -->
                 <ul class="menu">
