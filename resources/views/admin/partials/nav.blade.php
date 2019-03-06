@@ -27,7 +27,7 @@
       <li ><router-link to="/titulares" ><i class="fa fa-eye" ></i>Mis Titulares</router-link> </li>
 
       </li>
-      <li><a href="{{url('titulares/crear')}}"> <i class="fa fa-pencil" ></i> Crear Titulares</a></li>
+      <li><a href=""> <i class="fa fa-pencil" ></i> Crear Titulares</a></li>
 
     </ul>
   </li>
